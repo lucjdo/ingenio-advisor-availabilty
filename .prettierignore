@@ -1,0 +1,14 @@
+# Ignore artifacts:
+.next
+build
+coverage
+node_modules
+public
+.github
+.husky
+
+# Ignore all HTML files:
+*.html
+
+# Ignore package-lock
+package-lock.json
