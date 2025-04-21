@@ -7,7 +7,9 @@ export default async function AdvisorsPage() {
 
   return (
     <Container className='py-9' maxWidth='lg'>
-      <h1>Our Advisors</h1>
+      <Typography variant='h3' component='h1' sx={{ mb: 3 }}>
+        Our Advisors
+      </Typography>
       <Typography sx={{ mb: 3 }} variant='subtitle1' color='text.secondary'>
         Browse our expert advisors and find the perfect match for your needs
       </Typography>
