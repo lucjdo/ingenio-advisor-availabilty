@@ -1,4 +1,4 @@
-import { Container, Typography, Divider } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 import AdvisorList from '@advisors/components/advisor-list'
 import { getAdvisors } from '@advisors/services/advisors-service'
 

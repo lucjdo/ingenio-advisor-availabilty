@@ -1,6 +1,6 @@
 export interface AdvisorAvailability {
   id: number
-  availableSlots: string[] // ISO date strings
+  availableSlots: string[]
 }
 
 export interface Advisor {
@@ -18,12 +18,26 @@ export interface AdvisorsResponse {
 
 export interface AdvisorListProps {
   advisors: Advisor[] | null
-  isLoading?: boolean
-  onSelectAdvisor?: (advisor: Advisor) => void
 }
 
 export interface AdvisorCardProps {
-  advisor: Advisor
-  onCallNow?: (advisor: Advisor) => void
-  onChatLater?: (advisor: Advisor) => void
+  name: string
+  price: string
+  advisorId: number
+  profilePictureUrl: string
+}
+
+export type AvailabilityType = 'call' | 'chat'
+
+export type ButtonConfigType = {
+  [key in AvailabilityType]: {
+    text: string
+    icon: React.ReactNode
+    onClick: () => void
+  }
+}
+
+export interface AdvisorContactButtonProps {
+  advisorId: number
+  type: 'call' | 'chat'
 }

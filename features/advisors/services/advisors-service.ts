@@ -1,4 +1,4 @@
-import { AdvisorsResponse } from '../types/advisor'
+import { AdvisorsResponse } from '@advisors/types/advisor'
 
 const BASE_URL = 'https://mp30dcc6efca114e1b21.free.beeceptor.com'
 
@@ -32,7 +32,7 @@ const MOCK_ADVISORS = {
       'chat-availability': 0
     },
     {
-      id: 3,
+      id: 4,
       name: 'RexFrederick',
       profilePictureUrl:
         'https://si.keen.com/memberphotos/-24651289-1547364832Primary.jpg',
