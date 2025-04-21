@@ -83,6 +83,7 @@ Each feature module in the `features/` directory contains everything needed for 
 - **Types**: TypeScript type definitions
 
 This organization makes it easier to:
+
 - Understand the codebase by business domain
 - Maintain and extend features independently
 - Reuse code within feature boundaries
