@@ -19,12 +19,12 @@ export default function AdvisorCard({
       />
 
       <Box className='flex-1 ml-3'>
-        <Typography variant='h6' color='#00a693'>
+        <Typography variant='h6' color='#009688'>
           {name}
         </Typography>
       </Box>
 
-      <Box className='flex flex-col align-items-start gap-1 mt-4'>
+      <Box className='flex flex-col align-items-start gap-1 mt-4 min-w-36'>
         <Typography sx={{ fontWeight: 600 }}>{price}</Typography>
         <AdvisorContactButton advisorId={advisorId} type='call' />
         <AdvisorContactButton advisorId={advisorId} type='chat' />

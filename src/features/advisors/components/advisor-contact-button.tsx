@@ -1,9 +1,9 @@
 'use client'
 
 import { useCallback } from 'react'
-import { Button } from '@mui/material'
 import ChatIcon from '@mui/icons-material/Chat'
 import PhoneIcon from '@mui/icons-material/Phone'
+import IngenioButton from '@/shared/components/IngenioButton'
 import { useAdvisorAvailability } from '@/features/advisors/hooks/use-advisor-availability'
 import {
   AdvisorContactButtonProps,
@@ -46,26 +46,13 @@ export default function AdvisorContactButton({
   const config = buttonConfig[type]
 
   return (
-    <Button
-      variant='contained'
+    <IngenioButton
+      fullWidth
       startIcon={config.icon}
       onClick={config.onClick}
-      fullWidth
       disabled={!isAvailable}
-      sx={{
-        bgcolor: '#00bfa5',
-        '&:hover': { bgcolor: '#00a693' },
-        textTransform: 'none',
-        mb: 0.5,
-        ...(!isAvailable
-          ? {
-              opacity: 0.6,
-              cursor: 'not-allowed'
-            }
-          : {})
-      }}
     >
       {config.text}
-    </Button>
+    </IngenioButton>
   )
 }
