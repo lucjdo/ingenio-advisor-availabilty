@@ -1,8 +1,6 @@
 import { Button, ButtonProps } from '@mui/material'
 
-interface IngenioButtonProps extends ButtonProps {}
-
-export default function IngenioButton({ ...props }: IngenioButtonProps) {
+export default function IngenioButton({ ...props }: ButtonProps) {
   return (
     <Button
       variant='contained'
