@@ -19,8 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "@advisors/*": ["./features/advisors/*"]
+      "@/*": ["./src/*"],
+      "@advisors/*": ["./src/features/advisors/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
