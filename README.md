@@ -1,10 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ingenio Advisor Availability
+
+A Next.js application for managing advisor availability in the Ingenio platform. This project is built with Next.js, React, TypeScript, and Material UI.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (version specified in `.nvmrc` or latest LTS)
+- npm, yarn, pnpm, or bun
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone <repository-url>
+cd ingenio-advisor-availability
+
+# Install dependencies
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+### Running the Application
+
+```bash
+# Start the development server with Turbopack
 npm run dev
 # or
 yarn dev
@@ -14,20 +39,55 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Build the application
+npm run build
 
-## Learn More
+# Start the production server
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project follows a feature-driven architecture, which organizes code by business domains rather than technical layers. This approach improves maintainability, scalability, and developer experience by keeping related code together.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+./
+├── public/              # Static assets
+├── src/
+│   ├── app/             # Next.js App Router pages
+│   ├── features/        # Feature modules
+│   │   └── advisors/    # Advisor feature
+│   │       ├── components/  # UI components specific to advisors
+│   │       ├── hooks/       # Custom React hooks for advisor functionality
+│   │       ├── services/    # API services and data fetching
+│   │       └── types/       # TypeScript type definitions
+│   ├── lib/             # Shared utilities and configurations
+│   ├── shared/          # Shared components and utilities
+│   │   └── components/  # Reusable UI components
+│   └── styles/          # Global styles
+└── __tests__/          # Test files
+```
+
+### Feature-Driven Architecture
+
+Each feature module in the `features/` directory contains everything needed for that specific business domain:
+
+- **Components**: UI components specific to the feature
+- **Hooks**: Custom React hooks for feature-specific logic
+- **Services**: API services and data fetching logic
+- **Types**: TypeScript type definitions
+
+This organization makes it easier to:
+
+- Understand the codebase by business domain
+- Maintain and extend features independently
+- Reuse code within feature boundaries
+- Onboard new developers to specific features
 
 ## Testing
 
@@ -45,9 +105,3 @@ npm run test:coverage
 ```
 
 Test files are located in the `__tests__` directory.
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
