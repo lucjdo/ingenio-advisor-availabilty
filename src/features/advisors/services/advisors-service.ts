@@ -62,12 +62,11 @@ export const getAdvisors = async () => {
   }
 }
 
-const MOCK_AVAILABILITY = {
-  'call-availability': Math.random() > 0.5 ? 1 : 0,
-  'chat-availability': Math.random() > 0.5 ? 1 : 0
-}
-
 export const getAdvisorAvailability = async (id: number) => {
+  const MOCK_AVAILABILITY = {
+    'call-availability': Math.random() > 0.5 ? 1 : 0,
+    'chat-availability': Math.random() > 0.5 ? 1 : 0
+  }
   try {
     const res = await fetch(`${BASE_URL}/advisor-availability?id=${id}`)
     if (!res.ok) {
