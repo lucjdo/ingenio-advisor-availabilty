@@ -62,20 +62,23 @@ export const getAdvisors = async () => {
   }
 }
 
+const MOCK_AVAILABILITY = {
+  'call-availability': Math.random() > 0.5 ? 1 : 0,
+  'chat-availability': Math.random() > 0.5 ? 1 : 0
+}
+
 export const getAdvisorAvailability = async (id: number) => {
   try {
     const res = await fetch(`${BASE_URL}/advisor-availability?id=${id}`)
     if (!res.ok) {
       if (res.status === 429) {
-        return {
-          id,
-          'call-availability': Math.random() > 0.5 ? 1 : 0,
-          'chat-availability': Math.random() > 0.5 ? 1 : 0
-        }
+        return MOCK_AVAILABILITY
       }
       throw new Error(`HTTP error! status: ${res.status}`)
     }
-    return await res.json()
+    // Unmock when API is available
+    // const data = await res.json()
+    return MOCK_AVAILABILITY
   } catch (error) {
     console.error('Error fetching advisor availability:', error)
     throw error
