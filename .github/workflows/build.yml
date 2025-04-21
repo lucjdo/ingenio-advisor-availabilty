@@ -15,18 +15,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Set up Node.js with NPM cache
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: 'npm' 
 
-      - name: Clean up existing node_modules and lockfile
-        run: |
-          rm -rf node_modules package-lock.json
+      - name: Clean up node_modules (keep lockfile!)
+        run: rm -rf node_modules
 
-      - name: Install dependencies fresh
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build the app
         run: NODE_OPTIONS=--openssl-legacy-provider npm run build
