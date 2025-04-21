@@ -6,11 +6,11 @@ export default async function AdvisorsPage() {
   const advisors = await getAdvisors()
 
   return (
-    <Container maxWidth='lg' sx={{ py: 4 }}>
+    <Container className='py-9' maxWidth='lg'>
       <Typography variant='h3' component='h1' gutterBottom>
         Our Advisors
       </Typography>
-      <Typography variant='subtitle1' color='text.secondary' sx={{ mb: 2 }}>
+      <Typography className='mb-2' variant='subtitle1' color='text.secondary'>
         Browse our expert advisors and find the perfect match for your needs
       </Typography>
       <Divider sx={{ my: 3 }} />

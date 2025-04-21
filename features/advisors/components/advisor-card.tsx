@@ -10,28 +10,21 @@ export default function AdvisorCard({
   onChatLater
 }: AdvisorCardProps) {
   return (
-    <Card sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
+    <Card className='flex items-center p-4'>
       <Avatar
         sx={{ width: 90, height: 90 }}
         alt={advisor.name}
         src={advisor.profilePictureUrl}
       />
 
-      <CardContent sx={{ flex: 1, ml: 2 }}>
+      <CardContent className='flex-1 ml-3'>
         <Typography variant='h6' color='primary'>
           {advisor.name}
         </Typography>
       </CardContent>
 
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          gap: 1
-        }}
-      >
-        <Typography sx={{ fontWeight: '600' }}>{advisor.price}</Typography>
+      <Box className='flex flex-col align-items-start gap-1'>
+        <Typography className='font-bold'>{advisor.price}</Typography>
         <AdvisorAvailabilityButton
           advisor={advisor}
           type='call'
