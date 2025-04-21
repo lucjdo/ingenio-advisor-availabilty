@@ -56,6 +56,7 @@ export default function AdvisorContactButton({
         bgcolor: '#00bfa5',
         '&:hover': { bgcolor: '#00a693' },
         textTransform: 'none',
+        mb: 0.5,
         ...(!isAvailable
           ? {
               opacity: 0.6,

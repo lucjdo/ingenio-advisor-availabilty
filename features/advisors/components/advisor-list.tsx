@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Typography } from '@mui/material'
+import { Box, Divider, Typography } from '@mui/material'
 import AdvisorCard from '@advisors/components/advisor-card'
 import { AdvisorListProps } from '@advisors/types/advisor'
 
@@ -22,14 +22,17 @@ export default function AdvisorList({ advisors }: AdvisorListProps) {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-      {advisors.map(({ id, name, profilePictureUrl, price }) => (
-        <AdvisorCard
-          key={`${name}-${id}`}
-          advisorId={id}
-          name={name}
-          price={price}
-          profilePictureUrl={profilePictureUrl}
-        />
+      {advisors.map(({ id, name, profilePictureUrl, price }, index) => (
+        <>
+          <AdvisorCard
+            key={`${name}-${id}`}
+            advisorId={id}
+            name={name}
+            price={price}
+            profilePictureUrl={profilePictureUrl}
+          />
+          {index !== advisors.length - 1 && <Divider />}
+        </>
       ))}
     </Box>
   )
