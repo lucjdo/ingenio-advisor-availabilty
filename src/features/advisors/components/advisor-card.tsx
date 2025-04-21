@@ -1,6 +1,6 @@
 'use client'
 
-import { Avatar, CardContent, Typography, Box } from '@mui/material'
+import { Avatar, Typography, Box } from '@mui/material'
 import AdvisorContactButton from './advisor-contact-button'
 import { AdvisorCardProps } from '../types/advisor'
 
