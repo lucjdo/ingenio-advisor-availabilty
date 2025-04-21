@@ -69,11 +69,8 @@ export const getAdvisorAvailability = async (id: number) => {
       if (res.status === 429) {
         return {
           id,
-          availableSlots: [
-            new Date(Date.now() + 1000 * 60 * 60).toISOString(),
-            new Date(Date.now() + 1000 * 60 * 60 * 2).toISOString(),
-            new Date(Date.now() + 1000 * 60 * 60 * 3).toISOString()
-          ]
+          'call-availability': Math.random() > 0.5 ? 1 : 0,
+          'chat-availability': Math.random() > 0.5 ? 1 : 0
         }
       }
       throw new Error(`HTTP error! status: ${res.status}`)
