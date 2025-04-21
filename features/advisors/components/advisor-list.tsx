@@ -23,16 +23,15 @@ export default function AdvisorList({ advisors }: AdvisorListProps) {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
       {advisors.map(({ id, name, profilePictureUrl, price }, index) => (
-        <>
+        <Box key={`${name}-${id}`}>
           <AdvisorCard
-            key={`${name}-${id}`}
             advisorId={id}
             name={name}
             price={price}
             profilePictureUrl={profilePictureUrl}
           />
           {index !== advisors.length - 1 && <Divider />}
-        </>
+        </Box>
       ))}
     </Box>
   )
