@@ -15,3 +15,15 @@ export interface Advisor {
 export interface AdvisorsResponse {
   data: Advisor[]
 }
+
+export interface AdvisorListProps {
+  advisors: Advisor[] | null
+  isLoading: boolean
+  onSelectAdvisor?: (advisor: Advisor) => void
+}
+
+export interface AdvisorCardProps {
+  advisor: Advisor
+  onCallNow?: (advisor: Advisor) => void
+  onChatLater?: (advisor: Advisor) => void
+}
