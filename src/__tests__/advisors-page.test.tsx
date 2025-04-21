@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import AdvisorsPage from '@/app/advisors/page'
+import AdvisorsPage from '@/src/app/advisors/page'
 
 test('Advisors Page', async () => {
   const queryClient = new QueryClient({
