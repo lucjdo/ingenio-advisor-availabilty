@@ -1,7 +1,7 @@
 'use client'
 
 import { Avatar, Card, CardContent, Typography, Box } from '@mui/material'
-import AdvisorAvailabilityButton from './advisor-availability-button'
+import AdvisorContactButton from './advisor-contact-button'
 import { AdvisorCardProps } from '../types/advisor'
 
 export default function AdvisorCard({
@@ -25,13 +25,13 @@ export default function AdvisorCard({
 
       <Box className='flex flex-col align-items-start gap-1'>
         <Typography className='font-bold'>{advisor.price}</Typography>
-        <AdvisorAvailabilityButton
+        <AdvisorContactButton
           advisor={advisor}
           type='call'
           onCallNow={onCallNow}
           onChatLater={onChatLater}
         />
-        <AdvisorAvailabilityButton
+        <AdvisorContactButton
           advisor={advisor}
           type='chat'
           onCallNow={onCallNow}

@@ -18,7 +18,7 @@ export interface AdvisorsResponse {
 
 export interface AdvisorListProps {
   advisors: Advisor[] | null
-  isLoading: boolean
+  isLoading?: boolean
   onSelectAdvisor?: (advisor: Advisor) => void
 }
 
